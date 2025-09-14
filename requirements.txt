@@ -1,0 +1,19 @@
+# requirements.txt - project dependencies
+
+# Core deep learning framework
+tensorflow>=2.19.0
+
+# Numerical operations
+numpy>=2.0.2
+
+# Image loading and preprocessing
+Pillow>=11.3.0
+
+# Machine learning utilities (confusion matrix, classification report)
+scikit-learn>=1.6.1
+
+# Plotting and visualization (confusion matrices)
+matplotlib>=3.10.0
+
+# Data handling (CSV or other datasets)
+pandas>=2.2.2

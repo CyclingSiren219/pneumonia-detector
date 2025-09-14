@@ -1,0 +1,25 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Model files (ignore all except one you want to track)
+models/*.h5
+models/*_savedmodel/
+
+# Keep this model under version control
+!models/pneumoniaDetectionModel.keras
+
+# Keep sample images
+!sample-images/
