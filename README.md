@@ -26,13 +26,13 @@ The system preprocesses images, feeds them into the model, and outputs a predict
 ---
 ## Model Details
 
-Architecture: VGG16 (pre-trained on ImageNet) + custom fully connected layers
-Input Size: 224x224 RGB images
-Output: Binary classification (0 = NORMAL, 1 = PNEUMONIA)
-Files:
-pneumoniaDetectionModel.keras — Keras 3 native format (recommended)
-pneumoniaDetectionModel.h5 — legacy HDF5 format
-pneumoniaDetectionModel_SavedModel/ — TensorFlow SavedModel format
+Architecture: VGG16 (pre-trained on ImageNet) + custom fully connected layers  
+Input Size: 224x224 RGB images  
+Output: Binary classification (0 = NORMAL, 1 = PNEUMONIA)  
+Files:  
+pneumoniaDetectionModel.keras — Keras 3 native format (recommended)  
+pneumoniaDetectionModel.h5 — legacy HDF5 format  
+pneumoniaDetectionModel_SavedModel/ — TensorFlow SavedModel format  
 
 ---
 
