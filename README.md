@@ -26,9 +26,11 @@ The system preprocesses images, feeds them into the model, and outputs a predict
 ---
 ## Model Details
 
-Architecture: VGG16 (pre-trained on ImageNet) + custom fully connected layers  
+Architecture:  
+VGG16 (pre-trained on ImageNet) + custom fully connected layers  
 Input Size: 224x224 RGB images  
 Output: Binary classification (0 = NORMAL, 1 = PNEUMONIA)  
+
 Files:  
 pneumoniaDetectionModel.keras — Keras 3 native format (recommended)  
 pneumoniaDetectionModel.h5 — legacy HDF5 format  
@@ -66,35 +68,35 @@ _Pneumonia X-ray predicted as PNEUMONIA_
 ---
 
 ## Folder Structure
-pneumonia-detection/
-│
-├── models/
-│ ├── pneumoniaDetectionModel.keras
-│ ├── pneumoniaDetectionModel.h5
-│ └── pneumoniaDetectionModel_SavedModel/
-│
-├── src/
-│ └── predict.py
-│
-├── notebook/
-│ └── PneumoniaDetectionML.ipynb
-│
-├── sample_images/
-│ ├── sample-normal-1.jpg
-│ ├── sample-normal-2.jpg
-│ ├── sample-pneumonia-1.jpg
-│ └── sample-pneumonia-2.jpg
-│
-├── requirements.txt
-└── .gitignore
+pneumonia-detection/  
+│  
+├── models/  
+│ ├── pneumoniaDetectionModel.keras  
+│ ├── pneumoniaDetectionModel.h5  
+│ └── pneumoniaDetectionModel_SavedModel/  
+│  
+├── src/  
+│ └── predict.py  
+│  
+├── notebook/  
+│ └── PneumoniaDetectionML.ipynb  
+│  
+├── sample_images/  
+│ ├── sample-normal-1.jpg  
+│ ├── sample-normal-2.jpg  
+│ ├── sample-pneumonia-1.jpg  
+│ └── sample-pneumonia-2.jpg  
+│  
+├── requirements.txt  
+└── .gitignore  
 
 ---
 ## Requirements
 
-Dependencies are listed in requirements.txt:
-tensorflow>=2.19.0
-numpy>=2.0.2
-Pillow>=11.3.0
-scikit-learn>=1.6.1
-matplotlib>=3.10.0
-pandas>=2.2.2
+Dependencies are listed in requirements.txt:  
+tensorflow>=2.19.0  
+numpy>=2.0.2  
+Pillow>=11.3.0  
+scikit-learn>=1.6.1  
+matplotlib>=3.10.0  
+pandas>=2.2.2  
