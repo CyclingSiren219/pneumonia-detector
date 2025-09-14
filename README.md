@@ -58,11 +58,11 @@ pneumoniaDetectionModel_SavedModel/ — TensorFlow SavedModel format
 
 
 ### Sample Predictions
-![Prediction Example](sample-images/sample-normal-prediction.jpg)
-_Normal X-ray predicted as NORMAL_
+![Prediction Example](sample-images/sample-normal-prediction.jpg)  
+_Normal X-ray predicted as NORMAL_  
 
-![Prediction Example](sample-images/sample-pneumonia-prediction.jpg)
-_Pneumonia X-ray predicted as PNEUMONIA_
+![Prediction Example](sample-images/sample-pneumonia-prediction.jpg)  
+_Pneumonia X-ray predicted as PNEUMONIA_  
 
 
 ---
