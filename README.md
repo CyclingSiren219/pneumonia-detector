@@ -27,7 +27,7 @@ The system preprocesses images, feeds them into the model, and outputs a predict
 ## Model Details
 
 Architecture:  
-VGG16 (pre-trained on ImageNet) + custom fully connected layers  
+VGG16 (Frozen Base) -> Global Average Pooling -> Dense (256, ReLU) -> Dropout (0.5) -> Output (Sigmoid)
 Input Size: 224x224 RGB images  
 Output: Binary classification (0 = NORMAL, 1 = PNEUMONIA)  
 
