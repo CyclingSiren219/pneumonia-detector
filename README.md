@@ -146,8 +146,3 @@ Pillow>=11.3.0
 scikit-learn>=1.6.1  
 matplotlib>=3.10.0  
 pandas>=2.2.2
-
-**Install Dependecies*
-Ensure you have Python installed, then run:
-```bash
-pip install -r requirements.txt
