@@ -9,6 +9,7 @@ This personal project is a deep learning-based system for detecting pneumonia fr
 - [Project Overview](#project-overview)
 - [Model Details](#model-details)
 - [Model Performance](#model-performance)
+- [Explainability (Grad-CAM)](#explainability-grad-cam)
 - [Folder Structure](#folder-structure)
 - [Requirements](#requirements)
 
@@ -27,7 +28,7 @@ The system preprocesses images, feeds them into the model, and outputs a predict
 ## Model Details
 
 Architecture:  
-VGG16 (Frozen Base) -> Global Average Pooling -> Dense (256, ReLU) -> Dropout (0.5) -> Output (Sigmoid)
+VGG16(Frozen Base) -> Global Average Pooling -> Dense (256, ReLU) -> Dropout (0.5) -> Output (Sigmoid)
 Input Size: 224x224 RGB images  
 Output: Binary classification (0 = NORMAL, 1 = PNEUMONIA)  
 
@@ -64,6 +65,32 @@ _Normal X-ray predicted as NORMAL_
 ![Prediction Example](sample-images/sample-pneumonia-prediction.jpg)  
 _Pneumonia X-ray predicted as PNEUMONIA_  
 
+---
+## Explainability (Grad-CAM)
+
+To ensure the model is trustworthy and medically relevant, we utilize **Grad-CAM (Gradient-weighted Class Activation Mapping)**. This technique generates a heatmap highlighting the specific regions of the X-ray that the AI focused on to make its diagnosis.
+
+### How to Read the Heatmap
+The heatmap uses the **Jet Colormap** to visualize the model's attention span, ranging from "High Importance" to "No Importance."
+
+* **🟥 Red (The "Hot Spot")**
+  * **Meaning:** **Critical Importance.** The model is 80-100% focused on these pixels.
+  * **Interpretation:** In a positive diagnosis, this area represents the "smoking gun." The AI has detected features here (such as tissue consolidation, fluid, or opacity) that strongly indicate Pneumonia.
+  * **Goal:** The red zone should overlap with the cloudy/white patches in the lungs visible to the human eye.
+
+* **🟨 Yellow & 🟩 Green (Transitional Zones)**
+  * **Meaning:** **Moderate Importance.** The model sees supporting evidence in these areas, but they are not the primary driver of the decision.
+  * **Interpretation:** These colors typically form a "halo" around the red core. If the heatmap is *only* yellow/green without a strong red center, the model may be less confident in its prediction.
+
+* **🟦 Blue / Transparent (Background)**
+  * **Meaning:** **Low / No Importance.** The model has ignored these areas.
+  * **Interpretation:** This includes healthy lung tissue, bones, the heart, and the background.
+  * **Note:** Our system automatically filters out extremely low values (<20%) to keep the image clean, making these areas appear transparent or dark blue.
+
+### Example Result
+Below is a sample prediction where the model correctly identified pneumonia in the right lung (left side of the image) with 99.9% confidence. Notice how the Red zone strictly adheres to the infected tissue and ignores the clear lung on the other side.
+
+![Grad-CAM Visualization](sample-images/sample-pneumonia-1_gradcam.jpg)
 
 ---
 
@@ -99,4 +126,9 @@ numpy>=2.0.2
 Pillow>=11.3.0  
 scikit-learn>=1.6.1  
 matplotlib>=3.10.0  
-pandas>=2.2.2  
+pandas>=2.2.2
+
+**Install Dependecies*
+Ensure you have Python installed, then run:
+```bash
+pip install -r requirements.txt
