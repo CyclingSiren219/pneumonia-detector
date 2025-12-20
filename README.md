@@ -7,6 +7,7 @@ This personal project is a deep learning-based system for detecting pneumonia fr
 ## Table of Contents
 
 - [Project Overview](#project-overview)
+- [Usage](#usage)
 - [Model Details](#model-details)
 - [Model Performance](#model-performance)
 - [Explainability (Grad-CAM)](#explainability-grad-cam)
@@ -24,6 +25,24 @@ Pneumonia is a serious lung infection that can be detected from chest X-ray imag
 
 The system preprocesses images, feeds them into the model, and outputs a predicted class with confidence.
 
+---
+## Usage
+1. **Install Dependencies**
+
+   Ensure you have Python installed, then run:
+   ```bash
+   pip install -r requirements.txt
+2. **Run the Prediction Script**
+
+   Run the script from the project root folder:
+   ```bash
+   python src/predict.py
+3. **Test Custom Images**
+
+   To test a different image, open src/predict.py and update the test-image_path variable at the bottom of the file
+   ```python
+    test_image_path = os.path.join(BASE_DIR, "path", "to", "your-image.jpg")
+   
 ---
 ## Model Details
 
