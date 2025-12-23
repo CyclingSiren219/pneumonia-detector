@@ -109,7 +109,7 @@ The heatmap uses the **Jet Colormap** to visualize the model's attention span, r
 ### Example Result
 Below is a sample prediction where the model correctly identified pneumonia in the right lung (left side of the image) with 99.9% confidence. Notice how the Red zone strictly adheres to the infected tissue and ignores the clear lung on the other side.
 
-![Grad-CAM Visualization](sample-images/sample-pneumonia-1_gradcam.jpg)
+![Grad-CAM Visualization](sample-images/sample-pneumonia-1_gradcam.jpeg)
 
 ---
 
@@ -146,3 +146,4 @@ Pillow>=11.3.0
 scikit-learn>=1.6.1  
 matplotlib>=3.10.0  
 pandas>=2.2.2
+steamlit>=1.41.0

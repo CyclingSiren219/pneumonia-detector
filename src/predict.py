@@ -4,13 +4,13 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from explainability import generate_gradcam_heatmap, save_and_display_gradcam
 
-# --- CONFIGURATION ---
+# --- Configuration ---
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_PATH = os.path.join(BASE_DIR, "models", "pneumoniaDetectionModel.keras")
 IMG_SIZE = (224, 224)
 
-# --- LOAD MODEL ---
 def load_prediction_model():
+    """Loads the trained Keras model."""
     if not os.path.exists(MODEL_PATH):
         print(f"Error: Model file not found at {MODEL_PATH}")
         return None
@@ -22,16 +22,18 @@ def load_prediction_model():
         print(f"Error loading model: {e}")
         return None
 
+# Load model globally to avoid reloading on every call
 model = load_prediction_model()
 
-# --- PREDICTION ---
 def preprocess_image(image_path):
+    """Loads and normalizes image for the VGG16 model."""
     img = load_img(image_path, target_size=IMG_SIZE)
     img_array = img_to_array(img) / 255.0
     img_array = np.expand_dims(img_array, axis=0)
     return img_array
 
 def predict_image(image_path):
+    """Runs prediction and generates Grad-CAM if Pneumonia is detected."""
     if model is None: return
 
     try:
@@ -59,6 +61,7 @@ def predict_image(image_path):
         print(f"Error during prediction: {e}")
 
 if __name__ == "__main__":
+    # Test Run
     test_image_path = os.path.join(BASE_DIR, "sample-images", "sample-pneumonia-1.jpeg")
     if os.path.exists(test_image_path):
         predict_image(test_image_path)

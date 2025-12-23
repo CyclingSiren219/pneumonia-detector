@@ -20,3 +20,6 @@ pandas>=2.2.2
 
 # OpenCV for Grad-CAM visualizations
 opencv-python>=4.10.0
+
+#Steamlit for web app deployment
+streamlit>=1.41.0
