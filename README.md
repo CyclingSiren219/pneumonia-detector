@@ -122,16 +122,22 @@ pneumonia-detection/
 │ └── pneumoniaDetectionModel_SavedModel/  
 │  
 ├── src/  
-│ └── predict.py  
+│ ├── app.py
+| ├── explainability.py
+| └── predict.py
 │  
 ├── notebook/  
 │ └── PneumoniaDetectionML.ipynb  
 │  
 ├── sample_images/  
-│ ├── sample-normal-1.jpg  
-│ ├── sample-normal-2.jpg  
-│ ├── sample-pneumonia-1.jpg  
-│ └── sample-pneumonia-2.jpg  
+│ ├── confusion-matrix.png
+│ ├── sample-normal-1.jpeg  
+│ ├── sample-normal-2.jpeg  
+│ ├── sample-normal-prediction.jpg
+│ ├── sample-pneumonia-1_gradcam.jpeg
+│ ├── sample-pneumonia-1.jpeg  
+│ ├── sample-pneumonia-2.jpeg  
+│ └── sample-pneumonia-prediction.jpg
 │  
 ├── requirements.txt  
 └── .gitignore  
