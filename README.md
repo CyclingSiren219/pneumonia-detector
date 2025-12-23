@@ -114,33 +114,33 @@ Below is a sample prediction where the model correctly identified pneumonia in t
 ---
 
 ## Folder Structure
-pneumonia-detection/
-│
-├── models/
-│   ├── pneumoniaDetectionModel.keras
-│   ├── pneumoniaDetectionModel.h5
-│   └── pneumoniaDetectionModel_SavedModel/
-│
-├── src/
-│   ├── app.py
-│   ├── explainability.py
-│   └── predict.py
-│
-├── notebook/
-│   └── PneumoniaDetectionML.ipynb
-│
-├── sample_images/
-│   ├── confusion-matrix.png
-│   ├── sample-normal-1.jpeg
-│   ├── sample-normal-2.jpeg
-│   ├── sample-normal-prediction.jpg
-│   ├── sample-pneumonia-1_gradcam.jpeg
-│   ├── sample-pneumonia-1.jpeg
-│   ├── sample-pneumonia-2.jpeg
-│   └── sample-pneumonia-prediction.jpg
-│
-├── requirements.txt
-└── .gitignore
+pneumonia-detection/  
+│  
+├── models/  
+│   ├── pneumoniaDetectionModel.keras  
+│   ├── pneumoniaDetectionModel.h5  
+│   └── pneumoniaDetectionModel_SavedModel/  
+│  
+├── src/  
+│   ├── app.py  
+│   ├── explainability.py  
+│   └── predict.py  
+│  
+├── notebook/  
+│   └── PneumoniaDetectionML.ipynb  
+│  
+├── sample_images/  
+│   ├── confusion-matrix.png  
+│   ├── sample-normal-1.jpeg  
+│   ├── sample-normal-2.jpeg  
+│   ├── sample-normal-prediction.jpg  
+│   ├── sample-pneumonia-1_gradcam.jpeg  
+│   ├── sample-pneumonia-1.jpeg  
+│   ├── sample-pneumonia-2.jpeg  
+│   └── sample-pneumonia-prediction.jpg  
+│  
+├── requirements.txt  
+└── .gitignore  
 
 ---
 ## Requirements
@@ -151,5 +151,5 @@ numpy>=2.0.2
 Pillow>=11.3.0  
 scikit-learn>=1.6.1  
 matplotlib>=3.10.0  
-pandas>=2.2.2
-steamlit>=1.41.0
+pandas>=2.2.2  
+streamlit>=1.41.0
