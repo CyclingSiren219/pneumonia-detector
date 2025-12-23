@@ -152,4 +152,4 @@ Pillow>=11.3.0
 scikit-learn>=1.6.1  
 matplotlib>=3.10.0  
 pandas>=2.2.2
-streamlit>=1.41.0
+steamlit>=1.41.0
