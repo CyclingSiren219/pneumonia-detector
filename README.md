@@ -26,23 +26,63 @@ Pneumonia is a serious lung infection that can be detected from chest X-ray imag
 The system preprocesses images, feeds them into the model, and outputs a predicted class with confidence.
 
 ---
+
+## Web App Interface (Streamlit)
+
+The project includes an interactive web application built with Streamlit. Features of the web app include:
+- **File Upload:** Upload your own chest X-ray images (`.jpg`, `.jpeg`, `.png`) directly from your browser.
+- **Side-by-side View:** Displays the original uploaded X-ray next to the AI's analysis.
+- **Grad-CAM Visualization:** If pneumonia is detected, the app automatically generates and displays a heatmap over the X-ray, highlighting the regions the AI identified as indicative of infection (the "Hot Spot").
+- **Confidence Metrics:** Provides a clear diagnosis (NORMAL or PNEUMONIA) along with the model's confidence score as a progress bar.
+- **Privacy-focused:** All image processing is done locally on your machine.
+
+### App Screenshots
+
+**Initial State:**  
+![App Initial State](assets/streamlit-app-1.jpg)  
+*What the app looks like when it first opens up.*
+
+**Normal Scan:**  
+![Normal Chest X-Ray Scan](assets/streamlit-app-2.jpeg)  
+*App scanning a normal chest X-ray, providing the diagnosis and confidence level.*
+
+**Pneumonia Scan:**  
+![Pneumonia Chest X-Ray Scan](assets/streamlit-app-3.jpg)  
+*App scanning a chest X-ray with pneumonia. It displays the Grad-CAM image along with the diagnosis, confidence level, and instructions on how to interpret the Grad-CAM.*
+
+---
+
 ## Usage
+
 1. **Install Dependencies**
 
    Ensure you have Python installed, then run:
    ```bash
    pip install -r requirements.txt
-2. **Run the Prediction Script**
+   ```
+
+2. **Run the Streamlit Web App (Recommended)**
+
+   Launch the interactive web interface from the project root folder:
+   ```bash
+   streamlit run src/app.py
+   ```
+   *This will open the app in your default web browser (usually at http://localhost:8501).*
+
+3. **Run the Prediction Script (Command Line)**
 
    Run the script from the project root folder:
    ```bash
    python src/predict.py
-3. **Test Custom Images**
+   ```
 
-   To test a different image, open src/predict.py and update the test-image_path variable at the bottom of the file
+4. **Test Custom Images (Command Line)**
+
+   To test a different image, open src/predict.py and update the test-image_path variable at the bottom of the file:
    ```python
-    test_image_path = os.path.join(BASE_DIR, "path", "to", "your-image.jpg")
-   
+   test_image_path = os.path.join(BASE_DIR, "path", "to", "your-image.jpg")
+   ```
+
 ---
 ## Model Details
 
